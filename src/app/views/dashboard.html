@@ -125,7 +125,7 @@
            <md-card-content style="height:auto" class="nopadding">
              <md-progress-circular class="loader_dashboard" ng-if="!onload_heat_map" md-diameter="156"></md-progress-circular>
              <div ng-if="onload_heat_map">
-             <leaflet lf-center="center" layers="layers" width="100%" height="560px"></leaflet>
+             <leaflet lf-center="center" id="heatmap" layers="layers" width="100%" height="560px"></leaflet>
            </div>
            </md-card-content>
           </md-card>

@@ -4,7 +4,7 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies',
   'ngSanitize', 'ui.router', 'ngMaterial', 'nvd3', 'pascalprecht.translate',
   'angular-timeline', 'infinite-scroll',
   'angularUtils.directives.dirPagination', 'angular-loading-bar',
-  'leaflet-directive', 'materialCalendar', 'app', 'rzModule', 'ui.calendar','md.chips.select'
+  'ui-leaflet', 'materialCalendar', 'app','rzModule', 'ui.calendar','md.chips.select'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $mdThemingProvider,
@@ -72,7 +72,7 @@ angular.module('angularMaterialAdmin', ['ngAnimate', 'ngCookies',
     })
     .state('home.segment', {
       url: '/segment',
-      templateUrl: 'app/views/segment.html',
+      templateUrl: 'app/views/segmentTrial.html',
       data: {
         title: 'Segment'
       },

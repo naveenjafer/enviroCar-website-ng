@@ -2185,14 +2185,7 @@ angular.module('app')
                 apikey: 'pk.eyJ1IjoibmF2ZWVuamFmZXIiLCJhIjoiY2lsYnVmamE0MDA1MXdnbHpvNGZianRuOCJ9.5KqDlJGBKr7ZF9Rdg6j_yQ',
                 mapid: 'naveenjafer.0n3ooo76'
               }
-            },
-
-            osm: {
-              name: 'OpenStreetMap',
-              url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-              type: 'xyz'
             }
-
 
           }
 
