@@ -1,0 +1,134 @@
+<md-sidenav md-component-id="left" style="z-index:100000"
+            class="md-whiteframe-z2 md-sidenav-left" 
+            md-is-locked-open="vm.lockLeft && $mdMedia('gt-xs')" >
+
+            <md-toolbar layout="column" style="min-height:10%">
+                <div class="md-toolbar-tools">
+                   <span flex></span>
+                   <md-button  hide-gt-xs class="bg-white" class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+                     <md-tooltip>Close Side Panel</md-tooltip>
+                     <i class="material-icons white09">&#xE314;</i>
+                   </md-button>
+                  </div>
+                  <div style="padding-top:20%;padding-left:7%">
+                  <p style="color:rgba(255,255,255,1);font-size:24px"><b>{{vm.profilename}}</b></p>
+                  <p style="color:rgba(255,255,255,0.7);font-size:14px;margin-top:-5%">{{vm.email}}</p>
+                </div>
+               </md-toolbar>
+               <div>
+                 <md-list>
+    <md-list-item  ng-repeat="item in vm.menuItems" ng-click="vm.selectItem(item)" href="{{item.sref}}" ui-sref-active="md-primary">
+        <md-item-content layout="row" layout-align="start center">
+         <!-- <div class="inset">
+            <i class="material-icons md-36 blue">{{item.icon}}</i>
+          </div>
+          <div class="inset" style="padding-top:8%">{{item.name}}
+          </div> -->
+
+            <i class="material-icons md-avatar md-36 blue">{{item.icon}}</i>
+                  <div class="md-list-item-text">
+                  <p>{{item.name}}</p>
+                  </div>
+        </md-item-content>
+    </md-list-item>
+    <md-divider></md-divider>
+    <md-subheader>Settings</md-subheader>
+    <md-item ng-repeat="item in admin">
+      <a>
+        <md-item-content md-ink-ripple layout="row" layout-align="start center">
+          <div class="inset">
+            <ng-xs-icon icon="{{item.icon}}"></ng-xs-icon>
+          </div>
+          <div class="inset">{{item.title}}
+          </div>
+        </md-item-content>
+      </a>
+    </md-item>
+  </md-list>
+</div>
+</md-sidenav>
+
+<div layout="column" flex>
+    <md-toolbar layout="row" layout-align="start center" class="customtoolbar">
+      <md-button hide show-gt-xs ng-click="vm.lockLeft=!vm.lockLeft" aria-label="Menu">
+          <i ng-if="!vm.lockLeft" class="material-icons white09">menu</i>
+          <i ng-if="vm.lockLeft" class="material-icons white09">&#xE314;</i>
+
+      </md-button>
+      <md-button hide-gt-xs  ng-click="vm.toggleItemsList()" aria-label="Menu">
+          <i class="material-icons white09">menu</i>
+          </md-button>
+
+      <span flex></span>
+        <md-button class="white-bg" ng-cloak ng-show="$root.showlogout" aria-label="Notifications" ui-sref="login">
+          <img style="height:20px;width:20px" ng-src="assets/images/ic_power_settings_new_white_48dp.png"/>
+          <span style="color:white">{{'LOGOUT' | translate}}</span>
+        </md-button>
+        <md-button class="white-bg" ng-cloak ng-show="!$root.showlogout" aria-label="Notifications" ui-sref="login">
+          <img style="height:20px;width:20px" ng-src="assets/images/ic_power_settings_new_white_48dp.png"/>
+          <span style="color:white">{{'LOGIN' | translate}}</span>
+        </md-button>
+<!--
+    <md-button ng-show="$root.showlogout" class="toolbar-button white-bg" aria-label="Settings" ng-click="vm.toggleRightSidebar()">
+      <img style="height:20px;width:20px" ng-src="assets/images/ic_account_circle_white_48dp.png"/>
+            <span style="color:white">{{'PROFILE' | translate}}</span>
+        </md-button> -->
+
+
+    </md-toolbar>
+
+    <md-content flex class="page-content">
+        <div ui-view style="height:100%"></div>
+    </md-content>
+</div>
+
+
+<!--
+<md-sidenav md-component-id="right"
+            class="md-whiteframe-z1 md-sidenav-right" style="width:30%">
+    <md-toolbar>
+        <md-toolbar layout="row" layout-align="center center">
+            <img class="img-circle">
+            <md-menu md-offset="0 20">
+                <md-button class="capitalize md-primary" ng-click="$mdOpenMenu()" aria-label="Open menu">
+                    <span ng-bind=vm.profilename style="color:white;width:40%"></span>
+                    <i style="color:white" class="material-icons">keyboard_arrow_down</i>
+                </md-button>
+                <md-menu-content width="3">
+                    <md-menu-item><md-button ng-click="$mdCloseMenu()" href="#/dashboard/home/">My Dashboard</md-button></md-menu-item>
+                    <md-menu-item><md-button ng-click="$mdCloseMenu()" href="#/dashboard/tracks/">My Tracks</md-button></md-menu-item>
+                    <md-menu-item><md-button ng-click="$mdCloseMenu()" ui-sref="login">Log out</md-button></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-toolbar>
+    </md-toolbar>
+
+    <section ng-controller="MyActivityControllerFixed">
+        <md-toolbar md-theme="blue">
+            <div class="md-toolbar-tools">
+                <h3>My Activity</h3>
+            </div>
+        </md-toolbar>
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" style="max-width:375px" class="card-4-50-0shadow" md-theme-watch>
+          <md-card-content class="nopadding">
+            <md-content flex layout-padding style="height:100%">
+              <md-list-item class="md-3-line" ng-repeat='item in events' ng-click="goToActivity(item.type,item.trackidlink)">
+                <i class="material-icons grey md-avatar md-48">{{item.icon}}</i>
+                <div style="padding-left:5%" class="md-list-item-text" layout="column">
+                <h3 style="color:{{item.color}}"><b>{{item.topic}}</b></h3>
+                <h4>{{item.name}}</h4>
+                <p>{{item.time | date:'medium'}}</p>
+              </div>
+              </md-list-item>
+              <div ng-show = 'busy'>Loading Data...</div>
+        </md-content>
+        </md-card-content>
+        <md-card-actions layout-align="center center" layout="column">
+          <md-button ng-if="!fetchingResults" class="white-bg"  ng-click="nextpage()">Load More</md-button>
+            <md-progress-circular ng-if="fetchingResults" class="loader_dashboard" md-diameter="40"></md-progress-circular>
+
+        </md-card-actions>
+        </md-card>
+    </section>
+</md-sidenav>
+-->
