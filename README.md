@@ -41,6 +41,10 @@ one recorded track. If you do not want to or are not able to contribute a
 track, please contact envirocar@52north.org in order to get a demo login
 account.
 
+## Sample Images from tool
+1) ![A view of the dashboard](https://pasteboard.co/H5vnA1Y.png)
+
+
 ## Heroku version
 
 You can find a heroku hosted version here https://envirocar.herokuapp.com/
