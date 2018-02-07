@@ -42,7 +42,7 @@ track, please contact envirocar@52north.org in order to get a demo login
 account.
 
 ## Sample Images from tool
-1) !https://pasteboard.co/H5vnA1Y.png
+1) ![view 1](https://pasteboard.co/H5vnA1Y.png)
 
 
 ## Heroku version
