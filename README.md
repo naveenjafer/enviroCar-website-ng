@@ -44,6 +44,14 @@ account.
 ## Sample Images from tool
 ![screen1](https://user-images.githubusercontent.com/7025448/35912742-7641d464-0c23-11e8-92c3-5ce7d47ed421.PNG)
 
+![screen2](https://user-images.githubusercontent.com/7025448/35912774-8f143982-0c23-11e8-8caf-f2e23527e5b7.PNG)
+
+![screen3](https://user-images.githubusercontent.com/7025448/35912789-9e1e17f4-0c23-11e8-9d81-370f3332bdf5.PNG)
+
+![screen4](https://user-images.githubusercontent.com/7025448/35912799-a5e186ba-0c23-11e8-9c22-8a0a5b1cd94b.PNG)
+
+![screen5](https://user-images.githubusercontent.com/7025448/35912815-ad455b02-0c23-11e8-8e35-daa873beaff9.PNG)
+
 
 ## Heroku version
 
