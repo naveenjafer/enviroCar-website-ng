@@ -2,6 +2,7 @@
 
 ## Getting started
 
+Project Information : https://summerofcode.withgoogle.com/archive/2016/projects/4801686195404800/
 Clone project:
 
 Install dependencies:
